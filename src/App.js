@@ -1,35 +1,62 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
+import './App.css';
+import Square from './Square';
 
 function App() {
-  const [count, setCount] = useState(0)
-
+  const [currentAttempt, setCurrentAttempt] = useState(1);
   return (
-    <>
-      <div>
-        <a href="https://vitejs.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
+    <div className="App">
+      <header className="App-header">
         <p>
-          Edit <code>src/App.jsx</code> and save to test HMR
+          WORDLE
         </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
+      </header>
+      <p>
+        <div className='board'>
+          <div id="row" className='row' >
+            <Square row="1" column="1" attempt={currentAttempt}></Square>
+            <Square row="1" column="2" attempt={currentAttempt}></Square>
+            <Square row="1" column="3" attempt={currentAttempt}></Square>
+            <Square row="1" column="4" attempt={currentAttempt}></Square>
+            <Square row="1" column="5" attempt={currentAttempt}></Square>
+          </div>
+
+          <div id="row" className='row' >
+            <Square row="2" column="1" attempt={currentAttempt}></Square>
+            <Square row="2" column="2" attempt={currentAttempt}></Square>
+            <Square row="2" column="3" attempt={currentAttempt}></Square>
+            <Square row="2" column="4" attempt={currentAttempt}></Square>
+            <Square row="2" column="5" attempt={currentAttempt}></Square>
+          </div>
+
+          <div id="row" className='row' >
+            <Square row="3" column="1" attempt={currentAttempt}></Square>
+            <Square row="3" column="2" attempt={currentAttempt}></Square>
+            <Square row="3" column="3" attempt={currentAttempt}></Square>
+            <Square row="3" column="4" attempt={currentAttempt}></Square>
+            <Square row="3" column="5" attempt={currentAttempt}></Square>
+          </div>
+
+          <div id="row" className='row' >
+            <Square row="4" column="1" attempt={currentAttempt}></Square>
+            <Square row="4" column="2" attempt={currentAttempt}></Square>
+            <Square row="4" column="3" attempt={currentAttempt}></Square>
+            <Square row="4" column="4" attempt={currentAttempt}></Square>
+            <Square row="4" column="5" attempt={currentAttempt}></Square>
+          </div>
+
+          <div id="row" className='row' >
+            <Square row="5" column="1" attempt={currentAttempt}></Square>
+            <Square row="5" column="2" attempt={currentAttempt}></Square>
+            <Square row="5" column="3" attempt={currentAttempt}></Square>
+            <Square row="5" column="4" attempt={currentAttempt}></Square>
+            <Square row="5" column="5" attempt={currentAttempt}></Square>
+          </div>
+
+        </div>
       </p>
-    </>
-  )
+
+    </div>
+  );
 }
 
-export default App
+export default App;
